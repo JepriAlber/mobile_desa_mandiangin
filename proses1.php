@@ -47,6 +47,7 @@
 		//status
 		if ($_GET['id']=='status') {
 			if($_GET['status']=='Beristri') {
+				
 				?>
 					<!-- <fieldset data-role="controlgroup" class="coba">			
 						<label for="jumlah_istri">Jumlah Istri</label>
