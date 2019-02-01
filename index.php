@@ -1,15 +1,13 @@
+<html>
 <?php 
 	require_once('koneksi.php');
 	require_once('config.php');
 	$connection = new Database($host, $user, $pass, $database);
 	include "m_proses.php";
 	$penduduk = new Penduduk($connection);
+	include 'header.php';
  ?>
-<html>
-<?php 
-include 'header.php';
-  
-?>
+
 <body>
 	<div data-role="page" id="page1" data-theme="C">
 		<div data-role="header" >

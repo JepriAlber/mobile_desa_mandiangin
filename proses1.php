@@ -53,9 +53,9 @@
 						<input required type="number" name="jumlah_istri" id="jumlah_istri" placeholder="Masukkan Jumlah Istri" onkeyup="jumlah()">
 					</fieldset> -->
 
-					<fieldset data-role="controlgroup" onclick="jumlah()">
+					<fieldset data-role="controlgroup"  >
 					<label for="jumlah_istri">Jumlah Istri :</label>
-					<select name="jumlah_istri" style="width: 100%; text-align:center !important; " class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow" id="jumlah_istri" required="true">
+					<select name="jumlah_istri" id="jumlah_istri"  style="width: 100%; text-align:center !important; " class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow"  required="true">
 						<option value="" selected disabled>Pilih</option>
 						<option value="1">1</option >
 						<option value="2">2</option>
@@ -100,3 +100,12 @@
 		}
 	}
 ?>
+
+<script type="text/javascript">
+
+$('#jumlah_istri').change(function() {
+			var jumlah_istri=$("#jumlah_istri").val();
+			var status=$("#status").val();
+			$('.tampil2').load('proses1.php?id=jumlah_istri&status='+ status +'&jumlah_istri='+jumlah_istri);
+		})
+</script>

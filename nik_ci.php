@@ -76,7 +76,7 @@
 
 				<fieldset data-role="controlgroup">			
 					<legend>Status Perkawinan</legend>
-						<select required name="status" id="status" onclick="ClickStatus()">
+						<select required name="status" id="status">
 							<option value="" selected disabled> Pilih</option>
 							<option value="Perawan">Perawan</option>
 							<option value="Janda">Janda</option>
@@ -86,15 +86,17 @@
 	<div class="tampil"></div>			 
 				
 	<script type="text/javascript">
-		function ClickStatus() {
-			var status=$("#status").val();
+
+		$('#status').change(function() {
+			var status=$(this).val();
 			if (status=="Janda") {
 				$('.tampil').load('proses2.php?id=status&status=Janda'); 
 			}
 			else if (status=="Perawan") {
 				$('.tampil').load('proses2.php?id=status&status=Perawan'); 
 			}
-		}
+
+		})
 
 	</script>
 

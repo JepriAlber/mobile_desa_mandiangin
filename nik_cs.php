@@ -58,7 +58,7 @@
 
 					<fieldset data-role="controlgroup">			
 					<legend>Status Perkawinan</legend>
-						<select required name="status" id="status" onclick="ClickStatus()">
+						<select required name="status" id="status"">
 							<option value="" selected disabled>Pilih</option>
 							<option value="Jejaka">Jejaka</option>
 							<option value="Beristri">Beristri</option>
@@ -69,7 +69,7 @@
 	<div class="tampil"></div>			
 	<div class="tampil2"></div>	
 				
-	<table width="100%" height="100%">
+	<table  width="100%" height="100%">
 		<tr>
 			<td width="50%"><a href="index.php" class="ui-btn ui-icon-back ui-btn-icon-right ui-corner-all ui-shadow">Kembali</a></td>
 			<td width="50%"><button type="submit" name="submit" value="suami" class="ui-btn ui-icon-navigation ui-btn-icon-right ui-corner-all ui-shadow">Lanjut</button></td>
@@ -88,8 +88,11 @@
 			?>
 <!--dari sini-->
 <script type="text/javascript">
-		function ClickStatus() {
-			var status=$("#status").val();
+	
+	
+        $('#status').change(function() {
+			var status=$(this).val();
+
 			if (status=="Beristri") {
 				$('.tampil').load('proses1.php?id=status&status=Beristri'); 
 			}
@@ -101,14 +104,8 @@
 				$('.tampil').load('proses1.php?id=status&status=Jejaka');
 				$('.tampil2').load('proses1.php');
 			}
-		}
-		function jumlah() {
-			var jumlah_istri=$("#jumlah_istri").val();
-			var status=$("#status").val();
-			$('.tampil2').load('proses1.php?id=jumlah_istri&status='+ status +'&jumlah_istri='+jumlah_istri);
-		}
 
-		
+		})
 	</script>
 
 </body>
