@@ -18,7 +18,7 @@ include 'header.php';
 	<input type="text" name="jenis_kelamin" id="jenis_kelamin" readonly value="<?php echo $data[0]['jenis_kelamin']; ?>">
 	
 	<label for="umur">Umur :</label>
-	<input type="text" name="umur" id="umur" value="<?php echo date('Y') -date('Y', strtotime($data[0]['tgl_lahir'])); ?>" required="true">
+	<input type="text" name="umur" id="umur" readonly value="<?php echo date('Y') -date('Y', strtotime($data[0]['tgl_lahir'])); ?>" required="true">
 
 	<label for="pekerjaan">Pekerjaan :</label>
 	<input type="text" name="pekerjaan" id="pekerjaan" readonly value="<?php echo $data[0]['pekerjaan']; ?>"">
