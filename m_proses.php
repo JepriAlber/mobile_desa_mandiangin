@@ -35,6 +35,16 @@ class Penduduk {
 
 	}
 
+	public function cekNik($nik = null){
+		$db = $this->mysqli->conn;
+		$sql = "SELECT nik FROM kependudukan ";
+		if ($nik != null) {
+			$sql .= "WHERE nik=$nik";
+		}
+		$query = $db->query($sql) or die ($db->error);
+		return $query;
+	}
+
 	public function nikCS($nik=null)
 	{
 		$db =$this->mysqli->conn;

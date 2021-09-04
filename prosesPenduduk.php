@@ -15,9 +15,17 @@
 	$tempat_tinggal = $_POST['tempat_tinggal'];
 	$pekerjaan = $_POST['pekerjaan'];
 	$status = $_POST['status'];
-   $penduduk->inputPenduduk($nik,$nama,$tempat_lahir,$tgl_lahir,$warga_negara,$jenis_kelamin,$agama,$tempat_tinggal,$pekerjaan,$status);
+
+		$cek=$penduduk->cekNik($nik);
+	if(mysqli_fetch_assoc($cek)){
+								echo ' <script>alert("NIK anda sudah terdata..")
+   									window.location = "Dpenduduk.php";</script> ';
+	}else{
+		
+		$penduduk->inputPenduduk($nik,$nama,$tempat_lahir,$tgl_lahir,$warga_negara,$jenis_kelamin,$agama,$tempat_tinggal,$pekerjaan,$status);
 
 	echo ' <script>alert("Sukses")
-   window.location = "index.php";</script> ';
+   			window.location = "index.php";</script> ';
 
+	}
 ?>

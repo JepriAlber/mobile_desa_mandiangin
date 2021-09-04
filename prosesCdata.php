@@ -97,7 +97,7 @@ if(isset($_GET['submit'])) {
             <?php
               if($rows['status_proses']=="Oke")
               {
-                $ket="Segera serahkan dokumen ke kantor";
+                $ket="Segera serahkan berkas ke kantor";
               }else{
                 $ket="-";
               } 
@@ -146,7 +146,7 @@ if(isset($_GET['submit'])) {
             <?php
               if($rows['status_proses']=="Oke")
               {
-                $ket="Segera serahkan dokumen ke kantor";
+                $ket="Segera serahkan berkas ke kantor";
               }else{
                 $ket="-";
               } 
@@ -195,12 +195,12 @@ if(isset($_GET['submit'])) {
             <?php
               if($rows['status_proses']=="Oke")
               {
-                $ket="Segera serahkan dokumen ke kantor";
+                $ket="Segera serahkan berkas ke kantor"; 
               }else{
                 $ket="-";
               } 
             ?>
-            <td>
+            <td align="right">
               <?php echo $ket; ?>
             </td>
           </tr>
@@ -211,6 +211,35 @@ if(isset($_GET['submit'])) {
         ?>
 
       </table>
+      <p >
+      <h3 style="color:red">PERLU DIINGAT:</h3>
+          <ol align="justify">
+              <li><b>Berkas asli yang dibawa ke kantor desa untuk pengurusan data penduduk : </b></li>
+                <ul>
+                  <li>KTP asli.</li>
+                  <li>Kartu Keluarga asli.</li>
+                </ul>   
+                    <br>
+                <li><b>Berkas asli yang dibawa ke kantor desa untuk pengurusan pendaftaran nikah (berkas calon suami maupun calon istri) :</b></li>
+              <ul>
+                  <li>Fotocopy Kartu Keluarga kedua belah pihak.</li>
+                  <li>Fotocopy KTP kedua belah pihak.</li>
+                  <li>Pas foto 2x4 2 lembar.</li>
+              </ul>
+                    <br>
+                <li><b>Berkas asli yang dibawa ke kantor desa untuk pengurusan surat keterangan domisili :</b></li>
+              <ul>
+                  <li>Membawa surat pengantar dari RT.</li>
+                  <li>Fotocopy Kartu Keluarga yang sudah mempunyai Kartu Keluarga Mandiangin.</li>
+              </ul>
+                  <br>
+                  <li><b>Berkas asli yang dibawa ke kantor desa untuk pengurusan surat keterangan melamar kerja :</b></li>
+              <ul>
+                  <li>Fotocopy Kartu Keluarga Mandiangin.</li>
+                  <li>Fotocopy KTP.</li>
+              </ul>
+      </ol>
+       </p>
 <?php }
   else { 
         echo "Data belum terdaftar <br> Mohon daftar terlebih dahulu ";
